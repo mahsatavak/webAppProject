@@ -1,0 +1,39 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSignIn()" class="body">
+  <mat-card class="card" appearance="outlined">
+    <mat-card-header>
+      <!-- Tab Navigation -->
+      <app-login-layout></app-login-layout>
+    </mat-card-header>
+
+    <!-- Tab Content -->
+    <mat-card-content>
+      <!-- Login Form -->
+      <div style="width: 300px">
+        <h2>Login</h2>
+
+          <mat-form-field style="width: 100%" color="primary">
+            <mat-label>username</mat-label>
+            <input
+              matNativeControl
+              type="username"
+              required
+              formControlName="username"
+            />
+          </mat-form-field>
+          <mat-form-field style="width: 100%" color="primary">
+            <mat-label>password</mat-label>
+            <input
+              matNativeControl
+              type="text"
+              minlength="5"
+              required
+              formControlName="password"
+            />
+          </mat-form-field>
+          <button mat-flat-button type="submit">Sign In</button>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>
+

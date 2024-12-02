@@ -1,0 +1,51 @@
+<form [formGroup]="signUpForm" (ngSubmit)="onSignUp()" class="body">
+
+  <mat-card class="card" appearance="outlined">
+    <mat-card-header>
+      <!-- Tab Navigation -->
+      <app-login-layout></app-login-layout>
+    </mat-card-header>
+    <!-- Tab Content -->
+    <mat-card-content>
+      <!-- Sign Up Form -->
+
+      <div style="width: 300px">
+
+          <h2>Sign Up</h2>
+          <mat-form-field style="width: 100%" color="primary">
+            <mat-label>Username</mat-label>
+            <input
+              matNativeControl
+              type="text"
+              maxlength="50"
+              required
+              formControlName="username"
+            />
+          </mat-form-field>
+          <mat-form-field style="width: 100%" color="primary">
+            <mat-label>Email</mat-label>
+            <input
+              matNativeControl
+              type="email"
+              required
+              formControlName="email"
+            />
+          </mat-form-field>
+          <mat-form-field style="width: 100%" color="primary">
+            <mat-label>password</mat-label>
+            <input
+              matNativeControl
+              type="text"
+              minlength="5"
+              maxlength="15"
+              required
+              formControlName="password"
+            />
+          </mat-form-field>
+          <button mat-flat-button type="submit">Sign Up</button>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>
+

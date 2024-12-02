@@ -1,0 +1,34 @@
+
+
+.body {
+  display: flex;               /* Flexbox aktivieren */
+  justify-content: center;     /* Horizontal zentrieren */
+  align-items: center;
+  background: rgb(255, 255, 255);
+  height: 100%;}
+
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 5px;
+  font-size: 1.25rem;
+
+}
+
+button:hover {
+  background: #5729fd;
+  transform: scale(1.05);
+}
+
+
