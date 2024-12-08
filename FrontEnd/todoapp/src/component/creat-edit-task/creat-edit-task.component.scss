@@ -1,0 +1,88 @@
+
+
+
+.body {
+  display: flex;               /* Flexbox aktivieren */
+  justify-content: center;     /* Horizontal zentrieren */
+  align-items: center; /* Zentriert den Inhalt vertikal */
+  padding: 10px ;
+  height: 100vh;               /* Volle Höhe des Viewports */
+  background-color: #ffffff;   /* Optional: Hintergrundfarbe */
+  margin: 0;                   /* Entferne Standardabstände des Body */
+}
+.container {
+  align-items: center;  /* Vertikal zentrieren */
+  justify-content: center; /* Horizontal zentrieren */
+  background: #eddef8;
+  width: 80%;
+  //height: 90%;
+  padding: 10px 20px 10px 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+
+  max-width: 600px; /* Maximale Breite, damit es nicht zu breit wird */
+  height: auto; /* Höhe passt sich dem Inhalt an */
+  flex-direction: column; /* Elemente stapeln sich vertikal */
+  border-radius: 8px; /* Abgerundete Ecken */
+
+
+}
+
+.container .text {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 20px; /* Abstand zum nächsten Element */
+}
+.input-container{
+  display: flex;
+  padding: 10px 10px 10px 10px;
+  width: 100%;
+  height: 70%;
+
+  flex-direction: column; /* Eingabefelder stapeln sich */
+
+}
+
+.mat-form-field {
+  width: 100%; /* Eingabefelder passen sich der Breite an */
+}
+
+.button-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  margin-top: 20px; /* Abstand nach oben */
+}
+
+button {
+  flex-grow: 1; /* Knopf dehnt sich gleichmäßig aus */
+  max-width: 200px; /* Begrenzte Breite */
+}
+
+/* Responsive Verhalten für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .container {
+    width: 95%; /* Nutze fast die gesamte Breite */
+    max-width: none; /* Entfernt Begrenzung */
+    padding: 10px;
+  }
+
+  .input-container {
+    gap: 10px; /* Reduziert den Abstand zwischen den Feldern */
+  }
+
+  .button-container {
+    flex-direction: column; /* Knöpfe werden vertikal angeordnet */
+    gap: 10px; /* Abstand zwischen den Knöpfen */
+  }
+
+  button {
+    width: 100%; /* Knöpfe füllen die gesamte Breite */
+  }
+}

@@ -18,7 +18,7 @@ import { RequestLogin } from '../../app/models/requestLogin';
 })
 export class LoginComponent implements OnInit{
   loginForm : FormGroup = new FormGroup({});
-  reqLogin :RequestLogin =new RequestLogin;
+  reqLogin :RequestLogin =new RequestLogin();
 
 // Der Konstruktor injiziert `FormBuilder`, um die FormGroup und FormControls effizient zu erstellen.
 //The FormBuilder instance is injected into the component's constructor,
@@ -53,21 +53,18 @@ export class LoginComponent implements OnInit{
     this.reqLogin.password = formValue.password;
     //Ruft die Methode login aus dem authUser-Service auf. Diese Methode sendet die Anmeldedaten (username und password) per HTTP-Post an den Server.
     //Die subscribe-Methode ermöglicht die Verarbeitung der Serverantwort.
-    this.authUser.login(this.reqLogin).subscribe
-    (
-     {
-      //Wenn der Server erfolgreich eine Antwort zurückgibt
-      next:(res) => {
-        console.log ("Received data"+ res.response);
-        //this.storageService.saveUser(data);
-        this.router.navigate(['']);
-      },
-      error: err => {
-        console.log ("Error by Login"+ err);
+    if (this.loginForm.valid) {
+      this.authUser.login(this.reqLogin).subscribe({
+        next: (res) => {
+          this.router.navigate(['/todo']);
+        }, error: (err) => {
+          console.log("Error Received:", err);
+        }
+      })
+    }else {
+      console.log("On submit failed.");
+    }
 
-      }
-     }
-    )
+    }
+
   }
-
-}

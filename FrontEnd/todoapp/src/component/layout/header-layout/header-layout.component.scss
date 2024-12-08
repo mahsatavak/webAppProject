@@ -1,0 +1,58 @@
+/* Toolbar Styling */
+mat-toolbar {
+  padding: 0 16px; /* Abstände für kleinere Geräte */
+}
+
+mat-toolbar span {
+  font-size: 1.2rem; /* Passe die Schriftgröße an */
+  white-space: nowrap; /* Verhindert, dass der Text umbrechen */
+}
+
+mat-toolbar button {
+  flex-shrink: 0; /* Verhindert, dass der Button skaliert wird */
+}
+
+/* Tabs Styling */
+mat-tab-nav-bar {
+  overflow-x: auto; /* Ermöglicht horizontales Scrollen */
+  white-space: nowrap; /* Verhindert Umbruch der Tabs */
+}
+
+mat-tab-link {
+  padding: 8px 16px;
+  text-align: center;
+}
+
+mat-tab-nav-panel {
+  margin-top: 16px; /* Platz zwischen Tabs und Content */
+}
+
+/* Responsive Verhalten */
+@media (max-width: 768px) {
+  mat-toolbar {
+    gap: 10px;
+    align-items: flex-start; /* Links ausrichten */
+  }
+
+  mat-toolbar span {
+    margin-bottom: 8px; /* Abstand zwischen Titel und Button */
+  }
+
+  mat-tab-nav-bar {
+    justify-content: flex-start; /* Tabs linksbündig */
+  }
+
+  mat-tab-link {
+    font-size: 0.9rem; /* Kleinere Schriftgröße für Tabs */
+  }
+}
+
+@media (max-width: 480px) {
+  mat-toolbar span {
+    font-size: 1rem; /* Kleinere Schriftgröße für Titel */
+  }
+
+  mat-toolbar button {
+    font-size: 0.9rem; /* Kleinere Schriftgröße für Button */
+  }
+}

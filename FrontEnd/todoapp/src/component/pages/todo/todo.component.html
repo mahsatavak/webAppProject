@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="section header">
+      <app-header-layout></app-header-layout>
+  </div>
+  <div class="section task">
+    <app-creat-edit-task (taskCreated)="onTaskCreated()"></app-creat-edit-task>
+  </div>
+  <div class="section list" >
+    <!-- Zugriff auf app-my-task -->
+    <app-my-task #myTaskComponent (editTaskEvent)="onTaskEdit($event)"></app-my-task>
+  </div>
+</div>

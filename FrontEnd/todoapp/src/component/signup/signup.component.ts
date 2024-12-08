@@ -54,6 +54,8 @@ export class SignupComponent {
       } else {
         console.log("On submit failed.");
       }
+
+      this.signUpForm.reset();
       }
 
 }

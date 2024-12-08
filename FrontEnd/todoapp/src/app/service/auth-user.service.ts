@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import {RequestLogin} from '../models/requestLogin';
 import { RequestSignUp } from '../models/RequestSignUp';
 import { Response } from '../models/response';
+import { CookieService } from 'ngx-cookie-service';
 
 
 const AUTH_API = 'http://localhost:8081/api/user/';
@@ -14,10 +15,10 @@ const AUTH_API = 'http://localhost:8081/api/user/';
 })
 export class AuthUserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   login(req: RequestLogin): Observable<Response> {
-    return this.http.post<Response>( AUTH_API + 'login',req);
+    return this.http.post<Response>( AUTH_API + 'login',req, { withCredentials: true });
 
   }
 
@@ -26,8 +27,15 @@ export class AuthUserService {
   }
 
   logout(): Observable<any> {
-    return this.http.post(AUTH_API + 'signout', { });
-  }
+    // Entferne das Cookie
+    //this.cookieService.delete('username', '/');
+    return this.http.post(AUTH_API + 'logout', {}, { withCredentials: true });
 
+
+  }
+  getUsername(): string {
+    // Lese den Benutzernamen aus dem Cookie
+    return this.cookieService.get('username');
+  }
 
 }

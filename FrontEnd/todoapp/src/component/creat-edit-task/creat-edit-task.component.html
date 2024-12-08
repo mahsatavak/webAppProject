@@ -1,0 +1,57 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSave()" class="body ">
+
+  <div class="container ">
+    <div class="text">Create a New Task</div>
+    <div class="input-container">
+      <div style="width: 100%">
+        <mat-form-field style="width: 50%" color="primary">
+          <mat-label>title</mat-label>
+          <input
+            matNativeControl
+            type="text"
+            maxlength="50"
+            required
+            formControlName="title"
+          />
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%; height: 60%">
+          <mat-label>description...</mat-label>
+          <textarea
+            matNativeControl
+            type="text"
+            maxlength="1024"
+            formControlName="description"
+          ></textarea>
+        </mat-form-field>
+
+        <div class="button-container">
+          <div style="display: flex; gap: 16px;">
+            <mat-form-field color="primary">
+              <mat-label>Assign To</mat-label>
+              <input
+                matNativeControl
+                type="text"
+                maxlength="50"
+                required
+                formControlName="responsible"
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Status</mat-label>
+              <mat-select formControlName="status">
+                <mat-option *ngFor="let status of statuses" [value]="status">
+                  {{ status }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <button mat-flat-button [disabled]="!isAssigneeValid" type="submit" >Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+

@@ -20,23 +20,6 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-//    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
-/*
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-*/
-    public String login(RequestLogin req) {
-        Optional<User> user = userRepository.findByUsername(req.getUsername());
-
-       if (userRepository.existsByUsername(req.getUsername()))
-            {
-            return "User details found";
-        }
-
-        return "User details not found";
-    }
-
     public Response register(RequestSignUp req) {
         Optional<User> usersnames = userRepository.findByUsername(req.getUsername());
         Optional<User> usersemail = userRepository.findByEmail(req.getEmail());
