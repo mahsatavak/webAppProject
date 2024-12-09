@@ -51,7 +51,7 @@ public class TaskController {
     }
 
 
-    @PutMapping("/my-tasks/{_id}")
+    @PutMapping("/{_id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Task> updateTask(@PathVariable("_id") String id, @RequestBody Task taskRequest) {
       return   ResponseEntity.ok(taskService.updateTask(taskRequest));
@@ -76,6 +76,16 @@ public class TaskController {
                     .body(Collections.emptyList());
         }
         List<Task> tasks = taskService.getCompletedTasks(username);
+        return ResponseEntity.ok(tasks);
+    }
+
+    @GetMapping("/other")
+    public ResponseEntity<List<Task>> getListOfOthersResponsibility (@CookieValue(value = "username", defaultValue = "") String username) {
+        if (username.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Collections.emptyList());
+        }
+        List<Task> tasks = taskService.getOthersTasks(username);
         return ResponseEntity.ok(tasks);
     }
 }

@@ -35,8 +35,13 @@
 /* Blau */
 }
 
+.section.task {
+  height: 20%; /* 50% der Höhe */
 
+}
+
+/* Sektion 2: 30% der Höhe */
 .section.list {
-  height: auto;
 
+  min-height: 60%;
 }

@@ -46,7 +46,7 @@ export class SignupComponent {
         this.authService.register(this.request).subscribe({
           next: (res) => {
             console.log(res.response);
-            this.msg = res.response;
+            alert(this.msg = res.response);
           }, error: (err) => {
             console.log("Error Received:", err);
           }

@@ -35,8 +35,14 @@ export class TaskService {
     });
   }
 
+  getOthersTasks(): Observable<Task[]> {
+    return this.http.get<Task[]>(Task_API + 'other',{
+      withCredentials: true
+    });
+  }
+
   updateTask(task: Task): Observable<Task> {
-    return this.http.put<Task>(`${Task_API}my-tasks/${task._id}`, task, { withCredentials: true});
+    return this.http.put<Task>(`${Task_API}${task._id}`, task, { withCredentials: true});
   }
 
   deleteTask(id: string): Observable<string> {

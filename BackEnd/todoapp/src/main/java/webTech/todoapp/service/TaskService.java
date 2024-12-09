@@ -53,4 +53,8 @@ public class TaskService {
     public List<Task> getCompletedTasks(String username) {
         return taskRepository.findByCreatorAndStatus(username, TaskStatus.COMPLETED);
     }
+
+    public List<Task> getOthersTasks(String username) {
+        return taskRepository.OtherResponsible(username);
+    }
 }
