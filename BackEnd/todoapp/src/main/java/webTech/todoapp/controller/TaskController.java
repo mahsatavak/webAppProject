@@ -16,7 +16,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/todos/")
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin("http://188.68.51.112:8080")
 @RequiredArgsConstructor
 public class TaskController {
 

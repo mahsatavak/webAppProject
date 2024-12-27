@@ -6,9 +6,10 @@ import { Response } from '../models/response';
 import { CookieService } from 'ngx-cookie-service';
 import { Task } from '../models/task';
 import { AuthUserService } from './auth-user.service';
+import { environment } from '../../enviroments/environment';
 
-
-const Task_API = 'http://localhost:8081/api/todos/';
+const Task_API = `${environment.apiUrl}/api/todos/`;
+console.log(Task_API);
 
 @Injectable({
   providedIn: 'root'

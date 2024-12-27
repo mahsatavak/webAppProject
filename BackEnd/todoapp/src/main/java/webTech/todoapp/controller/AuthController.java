@@ -6,9 +6,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.authentication.AuthenticationManager;
-//import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-//import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import webTech.todoapp.entity.User;
 import webTech.todoapp.entity.RequestLogin;
@@ -22,22 +19,15 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/user/")
+@CrossOrigin("http://188.68.51.112:8080")
 public class AuthController {
     @Autowired
     private UserService loginService;
     @Autowired
     private UserRepository userRepository;
 
-    /*
-     @Autowired
-    private AuthenticationManager authenticationManager;
 
-    @Autowired
-    private JWTService jwtService;
-
-
-    */
-    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+    @CrossOrigin(origins = "http://188.68.51.112:8080",allowCredentials = "true")
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody RequestLogin req, HttpServletResponse response) {
 /*
@@ -67,7 +57,7 @@ public class AuthController {
     }
 
 
-    @CrossOrigin("http://localhost:4200/")
+    @CrossOrigin("http://188.68.51.112:8080")
     @PostMapping("/signup")
     public ResponseEntity<?> signup( @RequestBody RequestSignUp request) {
         //System.out.println(request.getEmail());
@@ -75,7 +65,7 @@ public class AuthController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+    @CrossOrigin(origins = "http://188.68.51.112:8080", allowCredentials = "true")
     @PostMapping("/logout")
     public ResponseEntity<?> logout(HttpServletResponse response) {
         // Lösche das Cookie, indem ein neues Cookie mit derselben Name erstellt wird

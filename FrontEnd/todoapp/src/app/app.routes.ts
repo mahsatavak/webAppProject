@@ -30,7 +30,7 @@ export const routes: Routes = [
   component: DoneComponent,
 },
 {
-  path: 'community',
+  path: 'other',
   component: CommunityComponent,
 }
 

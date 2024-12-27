@@ -3,10 +3,10 @@
       <app-header-layout></app-header-layout>
   </div>
   <div class="section task">
-
+    <app-creat-edit-task (taskCreated)="onTaskCreated()"></app-creat-edit-task>
   </div>
   <div class="section list" >
     <!-- Zugriff auf app-my-task -->
-
+    <app-others-tasks #otherTaskComponent (editTaskEvent)="onTaskEdit($event)"></app-others-tasks>
   </div>
 </div>

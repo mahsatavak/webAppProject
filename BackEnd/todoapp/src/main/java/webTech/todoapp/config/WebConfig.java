@@ -11,9 +11,9 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         // Erlaube Anfragen von localhost:4200
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:4200")  // Nur lokale Frontend-Domain erlauben
+                .allowedOrigins("http://188.68.51.112:8080")  // Nur lokale Frontend-Domain erlauben http://localhost:4200
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowedHeaders("*")
+                //.allowedHeaders("*")
                 .allowCredentials(true);  // Dies erlaubt, dass auch Cookies und Auth-Header mit gesendet werden
     }
 }

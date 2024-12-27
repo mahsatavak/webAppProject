@@ -5,8 +5,8 @@
       <a mat-tab-link
         (click)="activeLink = link"
         [routerLink]="link.path"
-      routerLinkActive #rla="routerLinkActive"
-      [active]="rla.isActive"> {{ link.label }}
+        routerLinkActive #rla="routerLinkActive"
+        [active]="rla.isActive"> {{ link.label }}
       </a>
     }
   </nav>

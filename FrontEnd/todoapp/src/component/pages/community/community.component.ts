@@ -4,11 +4,12 @@ import { Task } from '../../../app/models/task';
 import { TaskService } from '../../../app/service/task.service';
 import { MyTaskComponent } from '../../my-task/my-task.component';
 import { CreatEditTaskComponent } from '../../creat-edit-task/creat-edit-task.component';
+import { OthersTasksComponent } from "../../others-tasks/others-tasks.component";
 
 @Component({
   selector: 'app-community',
   standalone: true,
-  imports: [HeaderLayoutComponent],
+  imports: [HeaderLayoutComponent, CreatEditTaskComponent, OthersTasksComponent],
   templateUrl: './community.component.html',
   styleUrl: './community.component.scss'
 })

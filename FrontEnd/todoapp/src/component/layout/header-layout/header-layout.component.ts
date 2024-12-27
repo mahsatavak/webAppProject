@@ -17,7 +17,7 @@ export class HeaderLayoutComponent {
 
   navLinks = [{ path: '/todo', label: 'To Do' },
     { path: '/done', label: 'Done' },
-    { path: '/community', label: 'Community' }];
+    { path: '/other', label: 'Others Responsibilities' }];
   activeLink = this.navLinks[1];
   background = 'primary';
   constructor(private authService: AuthUserService, private router: Router) {}

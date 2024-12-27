@@ -6,9 +6,10 @@ import {RequestLogin} from '../models/requestLogin';
 import { RequestSignUp } from '../models/RequestSignUp';
 import { Response } from '../models/response';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../enviroments/environment';
 
 
-const AUTH_API = 'http://localhost:8081/api/user/';
+const AUTH_API = `${environment.apiUrl}/api/user/`;
 
 @Injectable({
   providedIn: 'root'
